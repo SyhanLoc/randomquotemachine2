@@ -1,0 +1,24 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: table;
+    text-align: center;
+    background: url(https://cdn.fstoppers.com/styles/full/s3/media/2015/12/lesson-14-hong-kong-victoria-peak-blend-after.jpg);
+    background-size: cover;
+}
+
+#title {
+    font-family: Pacifico;
+    font-size: 35px;
+}
+
+.container {
+   max-width: 700px;
+  background: #fff;
+  height: 100%;
+  padding: 20px 50px;
+  margin-top: 5em;
+    opacity: .6;
+    border-radius: 25px;
+}
