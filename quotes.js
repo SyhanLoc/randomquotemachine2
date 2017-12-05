@@ -1,6 +1,7 @@
-/*global $*/
+/*global $ X*/
+
 $(document).ready(function() {
-    
+    // var x = getQuote()
     function getQuote (){
         $.ajax ({
             method: "GET",
@@ -15,16 +16,38 @@ $(document).ready(function() {
     }
     getQuote();
     
-	$('#getQuote').on('click', function(event) { 
+    
+    
+	$('#getQuote').on('click', function(event) { //linking the button from html
 		getQuote();
-		
 	})
 	
-})
-(function(d, s, id) {
+	$("#tweet").on("click", function(){
+		tweet();
+		// window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent("hello"));
+	})
+	
+	function tweet () {
+		console.log("tweet");
+		var phrase = document.getElementById('quote').innerText;
+		var tweetUrl = 'https://twitter.com/intent/tweet?text=' +
+	    		encodeURIComponent(phrase);
+		window.open(tweetUrl);
+	}
+	
+	
+	// document.getElementById("tweet").onclick = function() {
+	// 	console.log("hello");
+	// 	window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent("hello")); 
+	// }
+	
+	(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
     js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+	
+})
+
